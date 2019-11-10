@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_09_163541) do
+ActiveRecord::Schema.define(version: 2019_11_10_112900) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_11_09_163541) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
-    t.integer "team_id"
+    t.bigint "team_id"
     t.string "position"
     t.string "nation"
     t.datetime "birthday"
@@ -46,10 +49,10 @@ ActiveRecord::Schema.define(version: 2019_11_09_163541) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
-    t.integer "city_id"
+    t.bigint "city_id"
     t.string "color"
     t.integer "year"
-    t.integer "sponsor_id"
+    t.bigint "sponsor_id"
     t.float "budget"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

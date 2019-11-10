@@ -1,9 +1,11 @@
-class Ll < ActiveRecord::Migration[6.0]
+class Lll < ActiveRecord::Migration[6.0]
   def change
-    drop_table :teams
-    drop_table :cities
-    drop_table :sponsors
-    drop_table :players
+    #drop_table :cities
+    #drop_table :teams
+    #drop_table :sponsors
+    #drop_table :players
+    drop_table :users
+
 
     create_table :cities do |t|
       t.string :name
@@ -45,5 +47,16 @@ class Ll < ActiveRecord::Migration[6.0]
       t.integer :weight
       t.timestamps
     end
+
+    create_table :users do |t|
+      t.timestamps null: false
+      t.string :email, null: false
+      t.string :encrypted_password, limit: 128, null: false
+      t.string :confirmation_token, limit: 128
+      t.string :remember_token, limit: 128, null: false
+    end
+
+    add_index :users, :email
+    add_index :users, :remember_token
   end
 end

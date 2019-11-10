@@ -11,7 +11,7 @@
       <th>Колiр</th>
       <th>Бюджет</th>
       <th>Спонсор</th>
-      <th><%= link_to "Додати запис", teams_path + "/new", :class =>'btn btn-success btn-sm'%></th>
+      <th><%= link_to "Додати запис", new_team_path, :class =>'btn btn-success btn-sm'%></th>
     </tr>
   </thead>
 <% Team.all.each do |team| %>

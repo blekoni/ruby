@@ -2,8 +2,8 @@
 <br>
 
 <% if @sponsor.errors.any? %>
-  <% @sponsor.errors.full_messages.each do |msg| %>
-    <div class="allert alert-danger"><%= msg %></div>
+  <% @sponsor.errors.messages.each do |msg| %>
+    <div class="allert alert-danger"><%= msg.last.last.html_safe %></div>
   <% end %>
 <% end %>
 <br>
@@ -21,7 +21,7 @@
   </p>
 
   <p>
-    Оплата за гру<br>
+    Платіж за гру<br>
     <%= f.number_field :payment, {:class => 'form-control'} %>
   </p>
 

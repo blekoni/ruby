@@ -1,4 +1,4 @@
-class Lll < ActiveRecord::Migration[6.0]
+class Sad < ActiveRecord::Migration[6.0]
   def change
     drop_table :cities
     drop_table :teams

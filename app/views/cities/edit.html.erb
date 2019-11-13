@@ -2,8 +2,8 @@
 <br>
 
 <% if @city.errors.any? %>
-  <% @city.errors.full_messages.each do |msg| %>
-    <div class="allert alert-danger"><%= msg %></div>
+  <% @city.errors.messages.each do |msg| %>
+    <div class="allert alert-danger"><%= msg.last.last.html_safe %></div>
   <% end %>
 <% end %>
 <br>

@@ -2,8 +2,8 @@
 <br>
 
 <% if @player.errors.any? %>
-  <% @player.errors.full_messages.each do |msg| %>
-    <div class="allert alert-danger"><%= msg %></div>
+  <% @player.errors.messages.each do |msg| %>
+    <div class="allert alert-danger"><%= msg.last.last.html_safe %></div>
   <% end %>
 <% end %>
 <br>
